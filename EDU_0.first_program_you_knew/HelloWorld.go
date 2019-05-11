@@ -1,4 +1,4 @@
-package GO_std
+package main
 
 import "fmt"
 

@@ -13,9 +13,7 @@
 //
 //const c_name1, c_name2 = value1, value2
 
-package GO_std
-
-import "unsafe"
+package main
 
 //func main() {
 //	const LENGTH  int = 10
@@ -29,10 +27,24 @@ import "unsafe"
 //}
 
 // 常量可以用len(), cap(), unsafe.Sizeof()函数计算表达式的值。常量表达式中，函数必须是内置函数，否则编译不过：
+//const (
+//	a = "abc"
+//	b = len(a)
+//	c = unsafe.Sizeof(a)
+//)
+//
+//func main() {
+//	println(a, b, c)
+//}
+
+// iota
+// 可以被编译器改变的常量
+//iota 在 const关键字出现时将被重置为 0(const 内部的第一行之前)，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。
+//iota 可以被用作枚举值：
 const (
-	a = "abc"
-	b = len(a)
-	c = unsafe.Sizeof(a)
+	a = iota
+	b = iota
+	c = iota
 )
 
 func main() {
